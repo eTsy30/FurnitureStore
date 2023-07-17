@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.logo {
+  color: aqua;
+}
+.iconGroup {
+  color: aqua;
+}
+.textLogo {
+  color: #000;
+  font-size: 34px;
+  line-height: normal;
+}
+.logoContainer {
+  display: flex;
+  gap: 0.3rem;
+}
+.iconGroup {
+  display: flex;
+  gap: 2.8rem;
+}
