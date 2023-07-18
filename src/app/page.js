@@ -3,14 +3,30 @@ import styles from './page.module.css'
 import backGroundImage from '@/assets/background.png'
 import { PromoWindow } from '@/components/PromoWindow/PromoWindow'
 import { CategirySlider } from '@/components/CategirySlider/CategirySlider'
+const getTopics = async () => {
+  try {
+    const res = await fetch('http://localhost:3000/api/category', {
+      cache: 'force-cache',
+    })
 
-export default function Home() {
+    if (!res.ok) {
+      throw new Error('Failed to fetch topics')
+    }
+
+    return res.json()
+  } catch (error) {
+    console.log('Error loading topics: ', error)
+  }
+}
+export default async function Home() {
   // const handleSubmit = async () => {
   //   console.log('ddd')
   //   const res = await fetch('http://localhost:3000/api/category').json()
   //   console.log(res)
   //   return
   // }
+  const data = await getTopics()
+  console.log(data, 'fdddddddd')
   return (
     <div className={styles.home}>
       {/* <button onClick={() => handleSubmit()}>cccc</button> */}
@@ -31,7 +47,17 @@ export default function Home() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
       </article>
-      <CategirySlider />
+      <CategirySlider data={data} />
     </div>
   )
 }
+// export async function getServerSideProps() {
+//   const response = await fetch('http://localhost:3000/api/category') // Замените на вашу конечную точку API
+//   const data = await response.json()
+
+//   return {
+//     props: {
+//       data,
+//     },
+//   }
+// }

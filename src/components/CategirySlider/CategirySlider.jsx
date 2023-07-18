@@ -3,23 +3,9 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import styles from './style.module.css'
 import Image from 'next/image'
-const getTopics = async () => {
-  try {
-    const res = await fetch('http://localhost:3000/api/category', {
-      cache: 'force-cache',
-    })
-
-    if (!res.ok) {
-      throw new Error('Failed to fetch topics')
-    }
-
-    return res.json()
-  } catch (error) {
-    console.log('Error loading topics: ', error)
-  }
-}
-export const CategirySlider = async () => {
-  const data = await getTopics()
+//
+export const CategirySlider = ({ data }) => {
+  console.log(data, 'fff')
   return (
     <section>
       <Swiper
@@ -28,12 +14,12 @@ export const CategirySlider = async () => {
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        {data &&
+        {data ? (
           data.map((item) => (
             <SwiperSlide key={item._id}>
               <Image
                 alt="some"
-                src="https://publications-us-en.ikea.com/76561/1312782/pages/aa27a43e-1864-4731-9bfc-706d55854fbd-at1600.jpg"
+                src={item.img}
                 width="0"
                 height="0"
                 sizes="100vw"
@@ -42,7 +28,10 @@ export const CategirySlider = async () => {
               <p className={styles.label}>{item.title}</p>
               <p>{item.desc}</p>
             </SwiperSlide>
-          ))}
+          ))
+        ) : (
+          <h1>HHHHHHHHHHH</h1>
+        )}
       </Swiper>
     </section>
   )
