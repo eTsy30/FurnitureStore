@@ -14,24 +14,26 @@ export const CategirySlider = ({ data }) => {
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        {data ? (
-          data.map((item) => (
-            <SwiperSlide key={item._id}>
-              <Image
-                alt="some"
-                src={item.img}
-                width="0"
-                height="0"
-                sizes="100vw"
-                style={{ width: '100%', height: 'auto', borderRadius: '10px' }}
-              />
-              <p className={styles.label}>{item.title}</p>
-              <p>{item.desc}</p>
-            </SwiperSlide>
-          ))
-        ) : (
-          <h1>HHHHHHHHHHH</h1>
-        )}
+        {data
+          ? data.map((item) => (
+              <SwiperSlide key={item._id}>
+                <Image
+                  alt="some"
+                  src={item.img}
+                  width="0"
+                  height="0"
+                  sizes="100vw"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: '10px',
+                  }}
+                />
+                <p className={styles.label}>{item.title}</p>
+                <p>{item.desc}</p>
+              </SwiperSlide>
+            ))
+          : ''}
       </Swiper>
     </section>
   )
