@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import styles from './style.module.css'
+import styles from './style.module.scss'
 import Navbar from '../Navbar/Navbar'
 import logo from '@/assets/Logo.png'
 import Image from 'next/image'

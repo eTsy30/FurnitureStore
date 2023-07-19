@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from './page.module.scss'
 import backGroundImage from '@/assets/background.png'
 import { PromoWindow } from '@/components/PromoWindow/PromoWindow'
 import { CategirySlider } from '@/components/CategirySlider/CategirySlider'

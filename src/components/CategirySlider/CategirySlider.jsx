@@ -1,7 +1,7 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import styles from './style.module.css'
+import styles from './style.module.scss'
 import Image from 'next/image'
 //
 export const CategirySlider = ({ data }) => {
