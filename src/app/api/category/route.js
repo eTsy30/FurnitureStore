@@ -10,11 +10,6 @@ export async function POST(request) {
   return NextResponse.json({ message: 'Categories Created' }, { status: 201 })
 }
 
-// export async function GET() {
-//   await connectMongoDB()
-//   const topics = await Topic.find()
-//   return NextResponse.json({ topics })
-// }
 
 export async function GET() {
   try {

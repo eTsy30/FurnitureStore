@@ -4,10 +4,10 @@ import 'swiper/css'
 import styles from './style.module.scss'
 import Image from 'next/image'
 //
-export const CategirySlider = ({ data }) => {
+export const CategorySlider = ({ data }) => {
   console.log(data, 'fff')
   return (
-    <section>
+    <section className={styles.cocntainer}>
       <Swiper
         spaceBetween={50}
         slidesPerView={3}
@@ -16,7 +16,7 @@ export const CategirySlider = ({ data }) => {
       >
         {data
           ? data.map((item) => (
-              <SwiperSlide key={item._id}>
+              <SwiperSlide key={item._id} className={styles.swiperSlide}>
                 <Image
                   alt="some"
                   src={item.img}
@@ -29,8 +29,13 @@ export const CategirySlider = ({ data }) => {
                     borderRadius: '10px',
                   }}
                 />
+                <div
+                  onClick={() => alert(`go to ${item.title}`)}
+                  className={styles.description}
+                >
+                  <p>{item.desc}</p>
+                </div>
                 <p className={styles.label}>{item.title}</p>
-                <p>{item.desc}</p>
               </SwiperSlide>
             ))
           : ''}

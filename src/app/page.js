@@ -2,7 +2,9 @@ import Image from 'next/image'
 import styles from './page.module.scss'
 import backGroundImage from '@/assets/background.png'
 import { PromoWindow } from '@/components/PromoWindow/PromoWindow'
-import { CategirySlider } from '@/components/CategirySlider/CategirySlider'
+import { CategorySlider } from '@/components/CategorySlider/CategorySlider'
+import { Card } from '@/components/Card/Card'
+import { ListCadr } from '@/components/ListCadr/ListCadr'
 const getTopics = async () => {
   try {
     const res = await fetch('http://localhost:3000/api/category', {
@@ -19,17 +21,9 @@ const getTopics = async () => {
   }
 }
 export default async function Home() {
-  // const handleSubmit = async () => {
-  //   console.log('ddd')
-  //   const res = await fetch('http://localhost:3000/api/category').json()
-  //   console.log(res)
-  //   return
-  // }
   const data = await getTopics()
-  console.log(data, 'fdddddddd')
   return (
     <div className={styles.home}>
-      {/* <button onClick={() => handleSubmit()}>cccc</button> */}
       <div className={styles.previewContainer}>
         <Image
           src={backGroundImage}
@@ -47,17 +41,11 @@ export default async function Home() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
       </article>
-      <CategirySlider data={data} />
+      <CategorySlider data={data} />
+      <article className={styles.headingContainer}>
+        <h2 className={styles.title}>Our Products</h2>
+      </article>
+      <ListCadr />
     </div>
   )
 }
-// export async function getServerSideProps() {
-//   const response = await fetch('http://localhost:3000/api/category') // Замените на вашу конечную точку API
-//   const data = await response.json()
-
-//   return {
-//     props: {
-//       data,
-//     },
-//   }
-// }
