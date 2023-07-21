@@ -5,6 +5,8 @@ import { PromoWindow } from '@/components/PromoWindow/PromoWindow'
 import { CategorySlider } from '@/components/CategorySlider/CategorySlider'
 import { Card } from '@/components/Card/Card'
 import { ListCadr } from '@/components/ListCadr/ListCadr'
+import { Button } from '@/components/Button/Button'
+import { action } from './action'
 const getTopics = async () => {
   try {
     const res = await fetch('http://localhost:3000/api/category', {
@@ -20,8 +22,12 @@ const getTopics = async () => {
     console.log('Error loading topics: ', error)
   }
 }
+const handleButtonClick = (text) => {
+  alert('text')
+}
 export default async function Home() {
   const data = await getTopics()
+
   return (
     <div className={styles.home}>
       <div className={styles.previewContainer}>
@@ -45,7 +51,9 @@ export default async function Home() {
       <article className={styles.headingContainer}>
         <h2 className={styles.title}>Our Products</h2>
       </article>
-      <ListCadr />
+      <ListCadr>
+        <Button click={handleButtonClick} text="ddddd"></Button>
+      </ListCadr>
     </div>
   )
 }
