@@ -4,12 +4,10 @@ import { NextResponse } from 'next/server'
 
 export async function POST(request) {
   const body = await request.json()
-  console.log(body)
   await connectMongoDB()
   await Categories.create(body)
   return NextResponse.json({ message: 'Categories Created' }, { status: 201 })
 }
-
 
 export async function GET() {
   try {

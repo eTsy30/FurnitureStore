@@ -5,7 +5,6 @@ import styles from './style.module.scss'
 import Image from 'next/image'
 //
 export const CategorySlider = ({ data }) => {
-  console.log(data, 'fff')
   return (
     <section className={styles.cocntainer}>
       <Swiper
