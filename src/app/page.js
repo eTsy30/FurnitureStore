@@ -23,9 +23,9 @@ const getTopics = async () => {
     console.log('Error loading topics: ', error)
   }
 }
-const handleButtonClick = (text) => {
-  alert('text')
-}
+// const handleButtonClick = (text) => {
+//   alert('text')
+// }
 export default async function Home() {
   const data = await getTopics()
 

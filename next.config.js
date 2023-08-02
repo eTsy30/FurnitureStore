@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // ignoreBuildErrors: true,
   images: {
     remotePatterns: [
       {
@@ -7,12 +8,6 @@ const nextConfig = {
         hostname: 'publications-us-en.ikea.com',
         port: '',
         pathname: '/76561/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '',
       },
     ],
   },
