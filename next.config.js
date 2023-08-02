@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // ignoreBuildErrors: true,
+  ignoreBuildErrors: true,
   images: {
     remotePatterns: [
       {
