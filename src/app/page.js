@@ -5,8 +5,9 @@ import { PromoWindow } from '@/components/PromoWindow/PromoWindow'
 import { CategorySlider } from '@/components/CategorySlider/CategorySlider'
 import { Card } from '@/components/Card/Card'
 import { ListCadr } from '@/components/ListCadr/ListCadr'
-import { Button } from '@/components/Button/Button'
+import { Button } from '@/components/Buttons/Button'
 import { action } from './action'
+import { RoomSection } from '@/components/RoomSection/RoomSection'
 const getTopics = async () => {
   try {
     const res = await fetch('http://localhost:3000/api/category', {
@@ -51,9 +52,8 @@ export default async function Home() {
       <article className={styles.headingContainer}>
         <h2 className={styles.title}>Our Products</h2>
       </article>
-      <ListCadr>
-        <Button click={handleButtonClick} text="ddddd"></Button>
-      </ListCadr>
+      <ListCadr />
+      <RoomSection />
     </div>
   )
 }

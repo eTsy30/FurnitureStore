@@ -1,0 +1,29 @@
+.container {
+  margin-top: 70px;
+  display: flex;
+  height: 670px;
+  background: #fcf8f3;
+}
+.textContainer {
+  border: 1px solid #000;
+  width: 40%;
+  padding: 0 42px 0 100px;
+  vertical-align: middle;
+  margin-top: 15%;
+  h1 {
+    color: #3a3a3a;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 120%;
+  }
+  p {
+    color: #616161;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+  }
+}
+.cliderContainer {
+  width: 60%;
+  border: 1px solid #000;
+}
