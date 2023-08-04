@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import { ButtonsFull } from '../Buttons/ButtonsFull'
+import { SliderRoomSection } from './SliderRoomSection/SliderRoomSection'
 export const RoomSection = () => {
   return (
     <section className={styles.container}>
@@ -12,7 +13,9 @@ export const RoomSection = () => {
         </p>
         <ButtonsFull text="Explore More" />
       </div>
-      <div className={styles.cliderContainer}></div>
+      <div className={styles.cliderContainer}>
+        <SliderRoomSection />
+      </div>
     </section>
   )
 }

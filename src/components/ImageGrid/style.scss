@@ -1,0 +1,17 @@
+/* App.css */
+
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Расстояние между элементами */
+}
+
+.photo-item {
+  width: 200px; /* Ширина элемента */
+}
+
+.photo-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}

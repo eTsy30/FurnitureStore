@@ -8,12 +8,15 @@ import { ListCadr } from '@/components/ListCadr/ListCadr'
 import { Button } from '@/components/Buttons/Button'
 import { action } from './action'
 import { RoomSection } from '@/components/RoomSection/RoomSection'
+import PhotoGrid from '@/components/ImageGrid/PhotoGrid'
+import { Photo } from '@/components/Temp/Photo'
+import { FuniroFurniture } from '@/components/FuniroFurniture/FuniroFurniture'
 const getTopics = async () => {
   try {
     const res = await fetch('http://localhost:3000/api/category', {
       cache: 'force-cache',
     })
-
+    console.log(res, '!!!!!!!!!!!!!!!!')
     if (!res.ok) {
       throw new Error('Failed to fetch topics')
     }
@@ -23,12 +26,10 @@ const getTopics = async () => {
     console.log('Error loading topics: ', error)
   }
 }
-// const handleButtonClick = (text) => {
-//   alert('text')
-// }
+
 export default async function Home() {
   const data = await getTopics()
-
+  console.log(data, '#########')
   return (
     <div className={styles.home}>
       <div className={styles.previewContainer}>
@@ -54,6 +55,7 @@ export default async function Home() {
       </article>
       <ListCadr />
       <RoomSection />
+      <FuniroFurniture />
     </div>
   )
 }
